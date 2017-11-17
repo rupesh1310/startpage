@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="styles/styles.css">
+<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+<script src="scripts/functions.js"></script>
+<script src="scripts/jquery-2.1.4.min.js"></script>
+
+<script>
+  $.getJSON("http://api.theysaidso.com/qod.json", function(data) {
+  var quote = data.contents.quote;
+  var source = data.contents.author;
+  document.getElementById("bigBox").innerHTML = quote + " - " + source;
+});
+</script>
+</head>
+
+<body onload="defaultfunc()">
+   <div class="container2">
+      <form method="get" id="search" class="formsearchbar">
+        <input id="googlesearch" type="search" name="q" class="searchbar" placeholder="Search..." autofocus="autofocus" autocomplete="off"></input>
+        <select id="searchSource" onchange="dropdownSelect()" class="searchselect">
+          <option value="https://google.ca/search" selected>Google</option>
+          <option value="https://github.com/search">Github</option>
+          <option value="http://www.reddit.com/search">Reddit</option>
+        </select>
+      </form>
+      <div class="tiles">
+
+        <div class="row">
+          <div class="boxes box1">
+            <h2 class="header">Entertainment</h2>
+            <hr/>
+            <ul class="links">
+              <li><a href="https://news.ycombinator.com/" class="bigLink">Hacker News</a></li>
+              <li><a href="https://yts.ag/" class="bigLink">Yify torrents</a></li>
+              <li><a href="http://www.udemy.com/" class="bigLink">Udemy</a></li>
+              <li><a href="https://www.youtube.com" class="bigLink">Youtube</a></li>
+              <li><a href="http://yesmovies.org" class="bigLink">YesMovies</a></li>
+            </ul>
+          </div>
+          <div class="boxes box2">
+            <h1 class="clock" id="clock">
+              <script type="text/javascript">
+                getSomeTime();
+                setInterval("getSomeTime()", 1000);
+              </script>
+            </h1>
+            <hr/>
+            <h2 class="header" id="date1">
+              <script type="text/javascript">
+                getSomeDate();
+                setInterval("getSomeDate()", 100000);
+              </script>
+            </h2>
+          </div>
+          <div class="boxes box3">
+            <h2 class="header">Programming</h2>
+            <hr/>
+            <ul class="links">
+              <li><a href="https://github.com/" class="bigLink">Github</a></li>
+              <li><a href="http://stackoverflow.com/" class="bigLink">Stack Overflow</a></li>
+              <li><a href="https://www.hackerrank.com/" class="bigLink">Hackerrank</a></li>
+              <li><a href="http://www.reddit.com/r/unixporn/" class="bigLink">/r/unixporn</a></li>
+              <li><a href="http://highscalability.com/" class="bigLink">High Scalability</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="boxes box4">
+            <h3 class="header quotes" id="bigBox">Even pros were noob once - Sidharth Satapathy</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="boxes box5">
+            <h2 class="header">Miscellaneous</h2>
+            <hr/>
+            <ul class="links">
+              <li><a href="http://www.soauniversity.ac.in/" class="bigLink">ITER</a></li>
+              <li><a href="https://www.coursera.org" class="bigLink">Coursera</a></li>
+              <li><a href="http://www.last.fm/" class="bigLink">Last.fm</a></li>
+              <li><a href="https://soundcloud.com/" class="bigLink">Soundcloud</a></li>
+              <li><a href="https://www.saavn.com/" class="bigLink">Savaan</a></li>
+            </ul>
+          </div>
+          <div class="boxes box6">
+            <h2 class="header">Tools</h2>
+            <hr/>
+            <ul class="links">
+              <li><a href="https://mail.google.com" class="bigLink">Inbox</a></li>
+              <li><a href="https://privateemail.com/" class="bigLink">PrivateMail</a></li>
+              <li><a href="http://www.soauniversity.ac.in/iter-exam-notice/2016/7/11/student-login-admit-card-resultsattendance" class="bigLink">Student Login</a></li>
+              <li><a href="http://repl.it/languages" class="bigLink">Repl.it</a></li>
+              <li><a href="https://www.seedr.cc/files/" class="bigLink">Seedr</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+   </div>
+</body>
+<footer>
+</footer>
+</html>
