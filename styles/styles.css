@@ -4,6 +4,7 @@ body {
   background-size: cover;
   word-wrap: break-word;
   overflow: visible;
+  background-repeat:no-repeat;
 
 }
 hr {
