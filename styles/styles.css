@@ -5,7 +5,8 @@ body {
   word-wrap: break-word;
   overflow: visible;
   background-repeat:no-repeat;
--
+}
+
 hr {
   width: 80%;
   border-color: rgba(0,0,0,0.25);
